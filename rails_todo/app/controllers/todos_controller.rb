@@ -66,10 +66,7 @@ class TodosController < ApplicationController
     end
 
     def get_all_todo
-      @todos_status = Todo.all
-      puts "@todos_status -- #{@todos_status.inspect}"
       @todos = Todo.all.where(:user_id => current_user.id).sort_by {|sort| sort.updated_at}
-      puts "@todos -- #{@todos.inspect}"
     end
 
     # Only allow a list of trusted parameters through.

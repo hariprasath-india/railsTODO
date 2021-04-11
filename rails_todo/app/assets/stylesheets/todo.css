@@ -110,9 +110,21 @@ body {
     font-weight: 400;
     cursor: pointer;
 }
-.task button {
+
+.task .inprogress{
     border: none;
-    background: #5c5acf;
+    background: #65db83;
+    height: 100%;
+    width: 100px;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+}
+
+.task .delete{
+    border: none;
+    background: #e22d2d;
     height: 100%;
     width: 40px;
     color: #ffffff;
@@ -120,6 +132,7 @@ body {
     cursor: pointer;
     height: 40px;
 }
+
 button>.delete{
     background: #ffffff;
     height: 50px;
