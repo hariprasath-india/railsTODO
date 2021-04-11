@@ -5,6 +5,5 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     :registrations => 'users/registrations'
   }
-  resources :todo
-  root :to => 'todo#index'
+  root :to => 'todos#index'
 end

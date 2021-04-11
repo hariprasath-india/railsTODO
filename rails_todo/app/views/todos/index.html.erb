@@ -1,25 +1,81 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag 'todo', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'todo' %>
+<script src="https://kit.fontawesome.com/030399ca8b.js" crossorigin="anonymous"></script>
+<div class="container">
+    <div id="newtask">
+    <p><b> New Task </b></p>
+    <%= form_tag todos_path,{method: :post} do -%> 
+        <input type="text" placeholder="Task to be done" name='todo[task_name]' />
+        <button id='submit'>Add</button>
+        <%end -%>
+    </div>
 
-<h1>Todos</h1>
+    <div id="tasks">
+    <p><b> To Do </b></p>
+      <% @todos.each do |todo| %>
+      <% puts "todo --> #{todo.status}"%>
+        <%if todo.status == 'open'%>
+          <div class="task">
+              <span id="taskname"> <%= todo.task_name%> </span>
+              <% task_url = "/todos/#{todo.id}"%>
+              <%= form_tag task_url,{method: :put} do -%> 
+                <button type= 'submit' name="todo[status]" value="InProgess">
+                  <span>In Progress</span>
+                </button>
+              <%end -%>
+              <%= form_tag task_url,{method: :delete} do -%> 
+                <button type= 'submit' class="delete">
+                  <i class="far fa-trash-alt"></i>
+                </button>
+              <%end -%>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div id="tasks">
+    <p><b> In Progress </b></p>
+      <% @todos.each do |todo| %>
+        <%if todo.status == 'InProgess'%>
+          <div class="task">
+              <span id="taskname"> <%= todo.task_name%> </span>
+              <% task_url = "/todos/#{todo.id}"%>
+              <%= form_tag task_url,{method: :put} do -%> 
+                <button type= 'submit' name="todo[status]" value="Completed">
+                  <span>Completed</span>
+                </button>
+              <%end -%>
+              <%= form_tag task_url,{method: :delete} do -%> 
+                <button type= 'submit' class="delete">
+                  <i class="far fa-trash-alt"></i>
+                </button>
+              <%end -%>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 
-  <tbody>
-    <% @todos.each do |todo| %>
-      <tr>
-        <td><%= link_to 'Show', todo %></td>
-        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div id="tasks">
+    <p><b> Completed </b></p>
+      <% @todos.each do |todo| %>
+            <%if todo.status == 'Completed'%>
+              <div class="task completed">
+                  <span id="taskname"> <%= todo.task_name%> </span>
+                  <% task_url = "/todos/#{todo.id}"%>
+                  <%= form_tag task_url,{method: :delete} do -%> 
+                    <button type= 'submit' class="delete">
+                      <i class="far fa-trash-alt"></i>
+                    </button>
+                  <%end -%>
+              </div>
+            <% end %>
+          <% end %>
+    </div>
 
-<br>
-
-<%= link_to 'New Todo', new_todo_path %>
+     <%= form_tag '/users/sign_out',{method: :delete} do -%>  
+        <button class="signout">Sign Out</button> 
+     <%end -%>
+  
+    
+    
+</div>

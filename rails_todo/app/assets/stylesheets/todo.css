@@ -112,13 +112,41 @@ body {
 }
 .task button {
     border: none;
-    background: #8052EC;
+    background: #5c5acf;
     height: 100%;
     width: 40px;
     color: #ffffff;
     border-radius: 5px;
     cursor: pointer;
+    height: 40px;
 }
+button>.delete{
+    background: #ffffff;
+    height: 50px;
+    padding: 5px 10px;
+    border-radius: 0px;
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    cursor: pointer;
+    border-bottom: 2px solid #d1d3d4;
+    border: none;
+    background: #df3e3e;
+    height: 100%;
+    width: 40px;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+}
+
 .completed{
     text-decoration: line-through;
 }
@@ -162,4 +190,8 @@ a>.fab{
     font-size: 16px;
      padding: 10px 8px;
   }
+}
+
+.fa-trash-alt::before {
+    content: "\f2ed";
 }
