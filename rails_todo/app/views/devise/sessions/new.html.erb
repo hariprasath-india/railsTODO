@@ -1,0 +1,69 @@
+<% content_for :head do %>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>SignIn to Contacts Book</title>
+   <%= stylesheet_link_tag 'signup', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+<div class="main">
+               <!-- Sign up form -->
+               <section class="signup">
+                  <div class="sigup-section">
+                     <div class="signup-content">
+                        <div class="signup-container signup-pdg">
+                           <h1 class="signup-title">SignIn to Contacts Book</h1>
+                           <div class="clear25"></div>
+                              <% if notice.present? %>
+                                 <div class="sus-msg"><i aria-hidden="true" class="zmdi zmdi-check-circle"></i>
+                               <%= notice %></div>
+                               <% elsif alert.present? %>
+                               <div class="chkem-txt"><i class="fa fa-ban bicon" aria-hidden="true"></i>
+                               <%= alert %></div>
+                               <% end %>
+                               <div class="clear25"></div>
+                           <%= form_tag '/users/sign_in', {class: 'register-form', id: 'signin-form'} do -%>  
+                              <div class="form-group has-feedback ffl-wrapper">
+                                    <label for="email" class="ffl-label">Email ID</label> 
+                                   <i class="zmdi zmdi-email lk-ics"></i>
+                                  <input type="email"  name="user[email]" id="email" class="form-control"  required autofocus /> 
+                                  <span class="searchclear zmdi zmdi-close-circle"></span>
+
+                               </div>
+                               <div class="clear10"></div>
+                              
+
+                              <div class="form-group has-feedback ffl-wrapper">
+                                    <label for="password" class="ffl-label">Password</label>
+                                <i class="zmdi zmdi-lock lk-ics"></i> 
+                                <input type="password" name="user[password]" id="password" class="form-control input-lg" required >
+								   <span data-toggle="#password" class="zmdi zmdi-eye-off  sign-in-field-in toggle-password"></span>
+                                 
+                             </div>
+                             <div class="clear"></div>
+                              <div class="form-group form-button"> 
+                                 <input type="submit" name="signin" id="signin" class="sign-up-btn" value="Sign in"/> 
+                              </div>
+
+                           <div class="clear"></div>
+                         
+                           <div class="clear25"></div>
+                           <div class="dbox">
+                             <span class="ft-txt">
+                              <a href="/users/password/new" target="_self" style="background-color: rgba(255, 255, 255, 0);">Forgot password?</a>
+                             </span>    
+                           </div>
+						 <% end -%>
+                         </div>
+                     </div>
+                     <div class="clear5"></div>
+                  </div>
+                  <div class="clear15"></div>
+                   
+                  <p class="text-center ac-txt">Need a create Contacts Book?  <a href="/users/sign_up" style="background-color: rgba(255, 255, 255, 0);"><b>Create one</b></a></p>
+               </section>
+            </div>
+      <!-- JS -->
+      <%= javascript_include_tag "vendor/jquery.min.js" %>
+      <%= javascript_include_tag "vendor/jquery.validate.min.js" %>
+      <%= javascript_include_tag "floatingFormLabels.min.js" %>
+      <%= javascript_include_tag "sign_in.js" %>

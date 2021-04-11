@@ -1,0 +1,91 @@
+<% content_for :head do %>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Sign Up</title>
+      <%= stylesheet_link_tag 'signup', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "vendor/jquery.min.js" %>
+    <%= javascript_include_tag "vendor/popper.js" %>
+    <%= javascript_include_tag "vendor/bootstrap.min.js" %>
+    <%= javascript_include_tag "vendor/perfect-scrollbar.js" %>
+    <%= javascript_include_tag "vendor/sticky.min.js" %>
+    <%= javascript_include_tag "vendor/scripts-bundle.js" %>
+<% end %>
+
+<div class="main">
+         <!-- Sign up form -->
+         <section class="signup">
+            <div class="container">
+               <div class="signup-content">
+               
+                  <div class="signup-image">
+                     <div class="clear25"></div>
+                     <a class="signup-head">Sign up</a>
+
+                  </div>
+                  <div class="signup-form">
+                  <%= form_tag '/users', {class: 'register-form', id: 'signup-abtform'} do -%>
+				  <div class="signup-user-details-section">
+				  
+                     <h2 class="form-title">Give your information Please</h2>
+                
+					 		                     
+					   <div class="clear15"></div>
+							   <div class="form-group vl-gp ffl-wrapper">
+                             <label for="name" class="ffl-label ffl-lt">Email Address</label>
+                           <input type="email" name="user[email]" class="form-control pl-15 mtb-10" id="email"  autocomplete="off" placeholder="" autofocus />
+                              
+                              <%if alert.present?%>
+                                 <div class="pwd-bgtxt"><i class="zmdi zmdi-check-circle" aria-hidden="true"></i>
+                                 <span class="sc-pwd"><%= alert%></span> 
+                              </div>
+                           <%end%>
+                           
+                        </div>
+                        <div class="clear10"></div>
+                           <div class="form-group vl-gp ffl-wrapper">
+                              <label for="name" class="ffl-label ffl-lt">Full Name</label>
+                              <input type="text" name="user[fullName]" class="form-control pl-15 mtb-10" id="name"  autocomplete="off" />
+                              
+                           </div>
+                        <div class="clear10"></div>
+                        
+					  <div class="">
+                     <div class="clear5"></div>
+					 
+                     <div class="clear25"></div>
+                          <div class="form-group vl-gps  ffl-wrapper">
+                              <label for="password" class="ffl-label">Password</label>
+                              <i class="zmdi zmdi-lock lk-ics"></i>
+                           <input type="password" data-rule-passwordcheck="true"   autocomplete='new-password' name="user[password]" id="password" class="form-control input-lg" required placeholder="" autofocus>
+                           <span data-toggle="#password" class="zmdi zmdi-eye-off  secure-field-icon toggle-password" style="top: 14px;"></span> 
+                           <div class="pwd-bgtxt"><i class="zmdi zmdi-check-circle" aria-hidden="true"></i>
+                              <span class="sc-pwd">Your password is secure and you're all set!</span> 
+                           </div>
+                        </div>
+                        <div class="clear5"></div>
+                        <div class="clear25"></div>
+                        <div class="clear25"></div>
+                        <div class="form-group form-button">
+                           <span class="btstk">
+                           <input type="submit" name="signup" id="signup" class="form-submit" value=""/></span>
+                        </div>
+                     <% end %>
+                     <div class="clear25"></div>
+                  </div>
+					 </div>
+					    </form>
+                     <div class="clear25"></div>
+                  </div>
+					 </div>
+					 <div class="clear10"></div>
+					
+            </div>
+         </section>
+       </div>
+      <%= javascript_include_tag "vendor/jquery.min.js" %>
+      <%= javascript_include_tag "vendor/jquery.validate.js" %>
+      <%= javascript_include_tag "passwordRulesHelper.min.js" %>
+      <%= javascript_include_tag "floatingFormLabels.min.js" %>
+      <%= javascript_include_tag "sign-up-user-details.js" %>
+
