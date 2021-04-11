@@ -13,13 +13,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def create
   #   super
   # end
-  def create
+    def create
     super
     unless current_user.nil?
       current_user.fullName = params[:user][:fullName]
       current_user.save  
     else
-      flash.now[:alert] = "Email Id already Exists"
+      puts "Error"
+      # set_flash_message! :alert, "Email Id already Exists"
     end
   end
 

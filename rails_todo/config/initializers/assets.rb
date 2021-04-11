@@ -11,14 +11,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w( sign_in.js
-    vendor/*
-    fonts/*
-    floatingFormLabels.min.js
-    signup.css
-    passwordRulesHelper.min.js
-    sign-up-password.js
-    sign-up-user-details.js
-    common.css
-    font.css
-    reset_password.js )
+Rails.application.config.assets.precompile += %w( login.css )

@@ -1,16 +1,18 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="card">
+   <%= form_tag '/users/password' do -%>
+      <h2 class="title"> Forgot Password</h2>
+      <p class="subtitle">Enter your email address and we’ll send you 
+                                     a link to reset your password. </p>
+      <br/>
+      <br/>
+      <br/>
+      <div class="email-login">
+         <label for="email"> <b>Email</b></label>
+         <input type="text" placeholder="Enter Email" name="user[email]" required>
+      </div>
+      <br/>
+      <button class="cta-btn">Get Email !!</button>
+      <p class="subtitle">I already have an account! <a href="<%= new_user_session_url %>"> sign in</a></p>
+   <% end -%>
+</div>

@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations'
   }
   resources :todo
+  root :to => 'todo#index'
 end
