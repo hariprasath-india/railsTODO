@@ -39,6 +39,7 @@ body {
     padding: 30px 15px;
     background-color: #ffffff;
     border-radius: 5px;
+    
     -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.3);
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
@@ -72,6 +73,7 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
+    margin-top: 8px;
 }
 
 #tasks {
@@ -121,9 +123,6 @@ body {
     text-decoration: line-through;
 }
 
-a{
-   
-}
 a>.fab{
     display: block;
     color: #282828;
@@ -153,7 +152,7 @@ a>.fab{
 }
 @media screen and (min-width: 451px) {
   a{
-    font-size: 18px;
+    font-size: 16px;
      padding:10px 12px 10px 12px;
   }
 }
