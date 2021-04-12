@@ -1,7 +1,5 @@
 <div id="newtask">
     <p><b> New Task </b></p>
-    <%= form_tag todos_path,{method: :post,remote: true, id: "myLink"} do -%> 
-        <input type="text" placeholder="Task to be done" name='todo[task_name]' autofocus/>
-        <button id='submit'>Add</button>
-    <%end -%>
+    <input id="task_name" type="text" placeholder="Task to be done" name='todo[task_name]' autofocus/>
+    <button id='submit' onclick="create_todo()">Add</button>
 </div>

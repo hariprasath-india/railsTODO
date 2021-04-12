@@ -39,7 +39,7 @@ body {
     padding: 30px 15px;
     background-color: #ffffff;
     border-radius: 5px;
-    
+    margin-top: 30px;
     -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.3);
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
@@ -76,7 +76,18 @@ body {
     margin-top: 8px;
 }
 
-#tasks {
+#tasks-head {
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    padding: 30px 20px;
+    border-radius: 5px;
+ }
+
+#tasks-Open {
    width: 100%;
    position: relative;
    margin-top: 40px;
@@ -86,6 +97,26 @@ body {
    padding: 30px 20px;
    border-radius: 5px;
 }
+#tasks-InProgress {
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    padding: 30px 20px;
+    border-radius: 5px;
+ }
+ #tasks-Completed {
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    padding: 30px 20px;
+    border-radius: 5px;
+ }
 .task {
     background: #ffffff;
     height: 50px;

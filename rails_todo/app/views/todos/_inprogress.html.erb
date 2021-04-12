@@ -1,20 +1,16 @@
-<div id="tasks">
+<div id="tasks-InProgress">
     <p><b> In Progress </b></p>
     <% @todos.each do |todo| %>
-    <%if todo.status == 'InProgess'%>
-        <div class="task">
+    <% puts "#{todo.status}"%>
+    <%if todo.status == 'InProgress'%>
+        <div class="task" id = "task_<%= todo.id%>">
             <span id="taskname"> <%= todo.task_name%> </span>
-            <% task_url = "/todos/#{todo.id}"%>
-            <%= form_tag task_url,{method: :put} do -%> 
-                <button class= "inprogress" type= 'submit' name="todo[status]" value="Completed">
+                <button onclick="update_todo('<%= todo.id%>','Completed','Nil')" class= "inprogress" >
                 <span>Completed</span>
                 </button>
-            <%end -%>
-            <%= form_tag task_url,{method: :delete} do -%> 
-            <button class= "delete" type= 'submit' class="delete">
+            <button class= "delete"  onclick="delete_todo('<%= todo.id%>')" >
                 <i class="far fa-trash-alt"></i>
             </button>
-            <%end -%>
         </div>
     <% end %>
     <% end %>

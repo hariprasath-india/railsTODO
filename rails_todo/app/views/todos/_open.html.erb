@@ -1,23 +1,16 @@
-<div id="tasks">
+<div id="tasks-Open">
     <p><b> To Do </b></p>
     <% @todos.each do |todo| %>
-    <%if todo.status == 'open'%>
-        <div class="task">
-            <span id="taskname"> <%= todo.task_name%> </span>
-            <% task_url = "/todos/#{todo.id}"%>
-            
-            <%= form_tag task_url,{method: :put} do -%> 
-                <button class= "inprogress" type= 'submit' name="todo[status]" value="InProgess">
-                <span>In Progress</span>
+        <%if todo.status == 'Open'%>
+            <div class="task" id = "task_<%= todo.id%>">
+                <span id="taskname"> <%= todo.task_name%> </span>
+                <button class= "inprogress" onclick="update_todo('<%= todo.id%>','InProgress','Completed')" >
+                    <span>In Progress</span>
                 </button>
-            <%end -%>
-            
-            <%= form_tag task_url,{method: :delete} do -%> 
-            <button class= "delete" type= 'submit' class="delete">
-                <i class="far fa-trash-alt"></i>
-            </button>
-            <%end -%>
-        </div>
-    <% end %>
+                <button class= "delete"  onclick="delete_todo('<%= todo.id%>')" type= 'submit' class="delete">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+        <% end %>
     <% end %>
 </div>
