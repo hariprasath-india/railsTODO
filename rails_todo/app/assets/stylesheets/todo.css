@@ -151,6 +151,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
     height: 40px;
+    float: right;
+    position: absolute;
+    right: 90px;
 }
 
 .task .delete{
