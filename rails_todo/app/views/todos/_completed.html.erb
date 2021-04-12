@@ -1,0 +1,16 @@
+<div id="tasks">
+      <p><b> Completed </b></p>
+      <% @todos.each do |todo| %>
+        <%if todo.status == 'Completed'%>
+          <div class="task completed">
+              <span id="taskname"> <%= todo.task_name%> </span>
+              <% task_url = "/todos/#{todo.id}"%>
+              <%= form_tag task_url,{method: :delete} do -%> 
+                <button class= "delete" type= 'submit' class="delete">
+                  <i class="far fa-trash-alt"></i>
+                </button>
+              <%end -%>
+          </div>
+        <% end %>
+      <% end %>
+    </div>

@@ -1,0 +1,10 @@
+<%= stylesheet_link_tag 'todo', 'data-turbolinks-track': 'reload' %>
+<script src="https://kit.fontawesome.com/030399ca8b.js" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<div class="container">
+    <%= render 'todos/newTask'%>
+    <%= render 'todos/open'%>
+    <%= render 'todos/inprogress'%>
+    <%= render 'todos/completed'%>
+    <%= render 'todos/signOut'%>
+</div>
